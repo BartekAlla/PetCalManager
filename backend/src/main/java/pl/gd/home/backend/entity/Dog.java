@@ -19,7 +19,7 @@ public class Dog {
     @ManyToOne
     @JoinColumn(name = "dog_breed_id", nullable = false)
     private DogBreed dogBreed;
-    private Double weight;
+    private double weight;
     @Column(columnDefinition="TEXT")
     private String photo;
     @Enumerated(EnumType.STRING)
