@@ -1,8 +1,8 @@
-package pl.gd.home.backend.dto;
+package pl.gd.home.backend.dto.dog;
 
 
 import lombok.Data;
-import pl.gd.home.backend.enums.DogSpecification;
+import pl.gd.home.backend.enums.dog.DogSpecification;
 
 @Data
 public class AddNewDogDTO {

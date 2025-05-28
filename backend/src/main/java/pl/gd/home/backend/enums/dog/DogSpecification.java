@@ -1,5 +1,8 @@
-package pl.gd.home.backend.enums;
+package pl.gd.home.backend.enums.dog;
 
+import lombok.Getter;
+
+@Getter
 public enum DogSpecification {
     CASTRATION_STRERILIZATION("Castration/Strerilization", 1.6),
     NO_CASTRATION_STRERILIZATION("No Castration/Strerilization", 1.8),

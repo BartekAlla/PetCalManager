@@ -1,10 +1,10 @@
-package pl.gd.home.backend.entity;
+package pl.gd.home.backend.entity.dog;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.gd.home.backend.enums.DogSpecification;
+import pl.gd.home.backend.enums.dog.DogSpecification;
 
 @Entity
 @Data

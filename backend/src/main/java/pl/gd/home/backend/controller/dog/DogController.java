@@ -1,11 +1,11 @@
-package pl.gd.home.backend.controller;
+package pl.gd.home.backend.controller.dog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.gd.home.backend.dto.AddNewDogDTO;
-import pl.gd.home.backend.entity.Dog;
-import pl.gd.home.backend.entity.DogBreed;
+import pl.gd.home.backend.dto.dog.AddNewDogDTO;
+import pl.gd.home.backend.entity.dog.Dog;
+import pl.gd.home.backend.entity.dog.DogBreed;
 import pl.gd.home.backend.service.DogService;
 
 import java.util.List;

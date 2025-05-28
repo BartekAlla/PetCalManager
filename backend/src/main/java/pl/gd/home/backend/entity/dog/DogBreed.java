@@ -1,4 +1,4 @@
-package pl.gd.home.backend.entity;
+package pl.gd.home.backend.entity.dog;
 
 
 import jakarta.persistence.*;

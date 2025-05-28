@@ -1,16 +1,14 @@
 package pl.gd.home.backend.service;
 
-import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.gd.home.backend.dto.AddNewDogDTO;
-import pl.gd.home.backend.entity.Dog;
-import pl.gd.home.backend.entity.DogBreed;
-import pl.gd.home.backend.repository.DogBreedRepository;
-import pl.gd.home.backend.repository.DogRepository;
+import pl.gd.home.backend.dto.dog.AddNewDogDTO;
+import pl.gd.home.backend.entity.dog.Dog;
+import pl.gd.home.backend.entity.dog.DogBreed;
+import pl.gd.home.backend.repository.dog.DogBreedRepository;
+import pl.gd.home.backend.repository.dog.DogRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class DogService {
@@ -28,7 +26,7 @@ public class DogService {
     public Dog addNewDog(AddNewDogDTO addNewDogDTO) {
         DogBreed dogBreed = dogBreedRepository.findById(addNewDogDTO.getDogBreedId())
                 .orElseThrow(() -> new RuntimeException("Dog breed not found"));
-        Dog newDog = new Dog(0L, addNewDogDTO.getName(), dogBreed, addNewDogDTO.getWeight(), addNewDogDTO.getPhoto(), addNewDogDTO.getSpecification(), calculateCalorieRequirement(addNewDogDTO));
+        Dog newDog = new Dog(null, addNewDogDTO.getName(), dogBreed, addNewDogDTO.getWeight(), addNewDogDTO.getPhoto(), addNewDogDTO.getSpecification(), calculateCalorieRequirement(addNewDogDTO));
         dogRepository.save(newDog);
         return newDog;
     }
@@ -36,7 +34,7 @@ public class DogService {
     private Double calculateCalorieRequirement(AddNewDogDTO addNewDogDTO) {
         double methabolicWeight = Math.pow(addNewDogDTO.getWeight(), 0.75);
         double RER = 70 * methabolicWeight;
-        return RER * dogBreedRepository.getDogBreedById(addNewDogDTO.getDogBreedId());
+        return RER * addNewDogDTO.getSpecification().getCalorieMultiplier();
     }
 
 
