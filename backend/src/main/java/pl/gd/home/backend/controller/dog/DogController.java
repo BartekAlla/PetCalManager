@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.gd.home.backend.dto.dog.AddNewDogDTO;
 import pl.gd.home.backend.entity.dog.Dog;
 import pl.gd.home.backend.entity.dog.DogBreed;
-import pl.gd.home.backend.service.DogService;
+import pl.gd.home.backend.service.dog.DogService;
 
 import java.util.List;
 

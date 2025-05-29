@@ -1,4 +1,4 @@
-package pl.gd.home.backend.service;
+package pl.gd.home.backend.service.dog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
